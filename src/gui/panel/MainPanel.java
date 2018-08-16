@@ -23,12 +23,12 @@ public class MainPanel extends JPanel{
 	public CenterPanel workingPanel;
 	
 	private MainPanel() {
-		GUIUtil.setImageIcon(bCreate, "temp.png","生成");
-		GUIUtil.setImageIcon(bStrengthen, "temp.png","强化");
-		GUIUtil.setImageIcon(bInlay, "temp.png","镶嵌");
-		GUIUtil.setImageIcon(bRefine, "temp.png","洗练");
-		GUIUtil.setImageIcon(bRecombine, "temp.png","组合");
-		GUIUtil.setImageIcon(bReforge, "temp.png","重锻");
+		GUIUtil.setImageIcon(bCreate, "button.png","生成");
+		GUIUtil.setImageIcon(bStrengthen, "button.png","强化");
+		GUIUtil.setImageIcon(bInlay, "button.png","镶嵌");
+		GUIUtil.setImageIcon(bRefine, "button.png","洗练");
+		GUIUtil.setImageIcon(bRecombine, "button.png","组合");
+		GUIUtil.setImageIcon(bReforge, "button.png","重锻");
 		
 		tb.setLayout(new GridLayout(6,1));
 		tb.add(bCreate);

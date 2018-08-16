@@ -36,9 +36,9 @@ public class GUIUtil {
      * @param p
      * @param strechRate 拉伸比例1表示满屏幕
      */
-    public static void showPanel(JPanel p,double strechRate) {
+    public static void showPanel(JPanel p,double strechRate,int width,int height) {
         JFrame f = new JFrame();
-        f.setSize(500, 500);
+        f.setSize(width,height);
         f.setLocationRelativeTo(null);
         CenterPanel cp = new CenterPanel(strechRate);
         f.setContentPane(cp);
@@ -48,8 +48,12 @@ public class GUIUtil {
     }
      
     public static void showPanel(JPanel p) {
-        showPanel(p,0.85);
+        showPanel(p,0.85,400,500);
     }  
+  
+    public static void showPanel(JPanel p,double strechRate) {
+    	showPanel(p,strechRate,400,500);
+    }
  
     public static boolean checkNumber(JTextField tf, String input) {
         if (!checkEmpty(tf, input))
