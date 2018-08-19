@@ -11,11 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import util.GUIUtil;
 import javax.swing.DefaultComboBoxModel;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.FormSpecs;
-import com.jgoodies.forms.layout.RowSpec;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JInternalFrame;
 import java.awt.GridBagLayout;
@@ -197,12 +192,12 @@ public class CreatePanel extends JPanel{
 		
 		JLabel lblBlock3 = new JLabel("\u5206\u5757\u4E09\uFF1A");
 		lblBlock3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		lblBlock3.setBounds(136, 47, 60, 15);
+		lblBlock3.setBounds(136, 58, 60, 15);
 		panelBlock3.add(lblBlock3);
 		
 		JComboBox comboBlock3 = new JComboBox();
 		comboBlock3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		comboBlock3.setBounds(179, 44, 121, 21);
+		comboBlock3.setBounds(179, 55, 121, 21);
 		comboBlock3.setModel(new DefaultComboBoxModel(new String[] {"\u5218\u6D93\u5B50\u00B7\u78A7\u7259\u5760\u73AF"}));
 		panelBlock3.add(comboBlock3);
 		

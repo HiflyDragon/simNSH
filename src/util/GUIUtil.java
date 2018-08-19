@@ -24,13 +24,24 @@ public class GUIUtil {
         b.setHorizontalTextPosition(JButton.CENTER);
         b.setText(tip);
     }
+    
+    //显示物品图标及名称
+    public static void setItemIcon(JButton b,String fileName,String tip) {
+    	 ImageIcon i = new ImageIcon(new File(imageFolder, fileName).getAbsolutePath());
+         b.setIcon(i);
+         b.setPreferredSize(new Dimension(30,30));
+         b.setToolTipText(tip);//鼠标指在按钮上显示的文字，可以用来显示装备信息
+         b.setVerticalTextPosition(JButton.BOTTOM);
+         b.setHorizontalTextPosition(JButton.CENTER);
+         b.setText(tip);
+    }
  
     public static void setColor(Color color, JComponent... cs) {
         for (JComponent c : cs) {
             c.setForeground(color);
         }
     }
- 
+
     /**
      *
      * @param p

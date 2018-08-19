@@ -5,7 +5,6 @@ import javax.swing.SwingUtilities;
 import gui.frame.MainFrame;
 import gui.panel.CreatePanel;
 import gui.panel.MainPanel;
-import util.GUIUtil;
  
 public class Bootstrap {
     public static void main(String[] args) throws Exception{
