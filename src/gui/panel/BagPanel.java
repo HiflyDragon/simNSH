@@ -23,13 +23,15 @@ import javax.swing.JScrollBar;
 public class BagPanel extends JPanel {
 
 	public static BagPanel instance=new BagPanel();
-	public JPanel bag=new JPanel();
-   
     
 	private BagPanel() {
-		setLayout(null);		 
+		setLayout(null);
 		
-		bag.setBounds(0, 0, 278, 478);
+		JPanel bag=new JPanel();
+		bag.setBounds(0, 0, 350, 600);
+		add(bag);
+		bag.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+		
 //		bag.setPreferredSize(new Dimension(278,478));
 		
 //		JScrollPane jsp=new JScrollPane(bag);
@@ -37,25 +39,23 @@ public class BagPanel extends JPanel {
 //		setSize(300,500);
 		
 		 Map<String, JButton> b = new HashMap<String, JButton>();
+		 JButton b0=new JButton();
+		 GUIUtil.setItemIcon(b0, "item.png", "b0");
+		 bag.add(b0);
 		 for (int i=1;i<=30;i++) {
 				b.put("b"+i,new JButton());
-				GUIUtil.setItemIcon(b.get("b"+i), "item.png","²âÊÔ");
+				GUIUtil.setItemIcon(b.get("b"+i), "item.png","b"+i);
 				bag.add(b.get("b"+i));
 			}				
-		
-		bag.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-		add(bag);
-		
+	
 //		
 //		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 //		scroll.setPreferredSize(new Dimension(300,600));
 //		scroll.getViewport();
 	
-		
-		
 	}
 
 	public static void main(String args[]) {
-		GUIUtil.showPanel(BagPanel.instance,1,300,500);
+		GUIUtil.showPanel(BagPanel.instance,1,350,600);
 	}
 }

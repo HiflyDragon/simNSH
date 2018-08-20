@@ -21,6 +21,7 @@ public class MainPanel extends JPanel{
 	public JButton bReforge=new JButton();
 	
 	public CenterPanel workingPanel;
+	public CenterPanel ItemPanel;
 	
 	private MainPanel() {
 		GUIUtil.setImageIcon(bCreate, "button.png","Éú³É");
@@ -40,11 +41,13 @@ public class MainPanel extends JPanel{
 		
 		tb.setFloatable(false);
 		
-		workingPanel=new CenterPanel(0.8);
+		workingPanel=new CenterPanel(1);
+		ItemPanel=new CenterPanel(1);
 		
 		setLayout(new BorderLayout());
 		add(tb,BorderLayout.WEST);
 		add(workingPanel,BorderLayout.CENTER);
+		add(ItemPanel,BorderLayout.EAST);
 	}
 	
 	public static void main(String args[]) {

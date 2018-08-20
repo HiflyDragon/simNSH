@@ -28,7 +28,7 @@ public class CreatePanel extends JPanel{
 		setLayout(null);
 		
 		JPanel createtool = new JPanel();
-		createtool.setBounds(0, 0, 350, 500);
+		createtool.setBounds(0, 0, 350, 600);
 		add(createtool);
 		createtool.setLayout(null);
 		

@@ -9,11 +9,11 @@ public class MainFrame extends JFrame{
     public static MainFrame instance = new MainFrame();
      
     private MainFrame(){
-        this.setSize(460,650);
+        this.setSize(450,600);
         this.setTitle("Ë³»ðÅ¯×°±¸Ä£ÄâÆ÷");
         this.setContentPane(MainPanel.instance);
         this.setLocationRelativeTo(null);
-        this.setResizable(false);
+       // this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
      
