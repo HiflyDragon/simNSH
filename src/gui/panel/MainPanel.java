@@ -1,6 +1,7 @@
 package gui.panel;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -9,6 +10,8 @@ import javax.swing.JToolBar;
 
 import util.CenterPanel;
 import util.GUIUtil;
+import java.awt.FlowLayout;
+import javax.swing.JSplitPane;
 
 public class MainPanel extends JPanel{
 	public static MainPanel instance=new MainPanel();
@@ -20,10 +23,13 @@ public class MainPanel extends JPanel{
 	public JButton bRecombine=new JButton();
 	public JButton bReforge=new JButton();
 	
-	public CenterPanel workingPanel;
-	public CenterPanel ItemPanel;
+	public static CenterPanel workingPanel;
+	public static CenterPanel ItemPanel;
+	public JSplitPane sp;
 	
 	private MainPanel() {
+		
+		setLayout(new BorderLayout());
 		GUIUtil.setImageIcon(bCreate, "button.png","生成");
 		GUIUtil.setImageIcon(bStrengthen, "button.png","强化");
 		GUIUtil.setImageIcon(bInlay, "button.png","镶嵌");
@@ -44,13 +50,21 @@ public class MainPanel extends JPanel{
 		workingPanel=new CenterPanel(1);
 		ItemPanel=new CenterPanel(1);
 		
-		setLayout(new BorderLayout());
-		add(tb,BorderLayout.WEST);
-		add(workingPanel,BorderLayout.CENTER);
-		add(ItemPanel,BorderLayout.EAST);
+		sp = new JSplitPane(JSplitPane.VERTICAL_SPLIT, workingPanel, ItemPanel);
+		sp.setDividerLocation(490);
+		
+		add(tb,BorderLayout.WEST);		
+		add(sp, BorderLayout.CENTER);
+	//	add(workingPanel,BorderLayout.CENTER);
+	//	add(ItemPanel,BorderLayout.EAST);
+		
 	}
 	
 	public static void main(String args[]) {
+		workingPanel.setBounds(50, 50, 300, 60);
+		workingPanel.show(CreatePanel.instance);
+		ItemPanel.setBounds(10, 150, 300, 60);
+		ItemPanel.show(BagPanel.instance);
 		GUIUtil.showPanel(MainPanel.instance, 1);
 	}
 }

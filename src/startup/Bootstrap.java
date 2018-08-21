@@ -15,7 +15,7 @@ public class Bootstrap {
             public void run() {
                 MainFrame.instance.setVisible(true);
                 MainPanel.instance.workingPanel.show(CreatePanel.instance);
-                MainPanel.instance.ItemPanel.show(BagPanel.instance);
+                MainPanel.instance.ItemPanel.show(BagPanel.instance);              
             }
         });
     }

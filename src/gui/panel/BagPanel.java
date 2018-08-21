@@ -1,61 +1,71 @@
 package gui.panel;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.util.HashMap;
-import java.util.Map;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import util.GUIUtil;
 
-import javax.swing.JToolBar;
+import java.util.HashMap;
+import java.util.Map;
 
-import java.awt.Component;
-import java.awt.FlowLayout;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import java.awt.ComponentOrientation;
-import java.awt.Dimension;
-import java.awt.Rectangle;
-import javax.swing.JScrollBar;
 
-public class BagPanel extends JPanel {
-
-	public static BagPanel instance=new BagPanel();
-    
-	private BagPanel() {
+public class BagPanel extends JPanel{
+	
+	public static BagPanel instance=new BagPanel(600,100);
+	
+	public BagPanel(int xPixels,int yPixels) {
 		setLayout(null);
 		
-		JPanel bag=new JPanel();
-		bag.setBounds(0, 0, 350, 600);
-		add(bag);
-		bag.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-		
-//		bag.setPreferredSize(new Dimension(278,478));
-		
-//		JScrollPane jsp=new JScrollPane(bag);
-		//getContentPane().add(jsp);
-//		setSize(300,500);
-		
-		 Map<String, JButton> b = new HashMap<String, JButton>();
-		 JButton b0=new JButton();
-		 GUIUtil.setItemIcon(b0, "item.png", "b0");
-		 bag.add(b0);
-		 for (int i=1;i<=30;i++) {
-				b.put("b"+i,new JButton());
-				GUIUtil.setItemIcon(b.get("b"+i), "item.png","b"+i);
-				bag.add(b.get("b"+i));
-			}				
+		JPanel bagpanel = new JPanel();
+		JScrollPane scrollPane=new JScrollPane(bagpanel);
+		bagpanel.setPreferredSize(new Dimension(xPixels, yPixels));// 这是关键的2句
+		scrollPane.setPreferredSize(new Dimension(xPixels, yPixels));
 	
-//		
-//		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-//		scroll.setPreferredSize(new Dimension(300,600));
-//		scroll.getViewport();
-	
+	/*	
+	 * {
+		count++;
+		JButton button=new JButton("b"+count);
+		button.setPreferredSize(new Dimension(50,50));
+		bagpanel.add(button);
+		
+	    int column = (bagpanel.getWidth()) / 200;
+		double row= = count / column;
+		int d = (int)Math.ceil(row);
+		bagpanel.setPreferredSize(new Dimension(600,(int)(d*205)));
+		bagpanel.revalidate();
+		bagpanel.repaint();
+	 * }
+	 */
+		
+		
+	//	bagpanel.setBounds(0, 0, 600, 100);
+		bagpanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		
+		add(bagpanel);
+		add(scrollPane);
+		
+		setSize(xPixels,yPixels);
+		setVisible(true);
+		
+	/*
+	 * 	 
+	    Map<String, JButton> b = new HashMap<String, JButton>();
+	 
+		for (int i=1;i<=30;i++) {
+			b.put("b"+i,new JButton());
+			GUIUtil.setItemIcon(b.get("b"+i), "item.png","Testb"+i);
+			bagpanel.add(b.get("b"+i));				
+	       }
+	*			
+	*/
+					
 	}
-
+	
 	public static void main(String args[]) {
-		GUIUtil.showPanel(BagPanel.instance,1,350,600);
+		GUIUtil.showPanel(BagPanel.instance);
 	}
 }

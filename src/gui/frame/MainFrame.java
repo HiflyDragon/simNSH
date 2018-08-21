@@ -9,8 +9,8 @@ public class MainFrame extends JFrame{
     public static MainFrame instance = new MainFrame();
      
     private MainFrame(){
-        this.setSize(450,600);
-        this.setTitle("Ë³»ðÅ¯×°±¸Ä£ÄâÆ÷");
+        this.setSize(800,700);
+        this.setTitle("simNSH");
         this.setContentPane(MainPanel.instance);
         this.setLocationRelativeTo(null);
        // this.setResizable(false);
