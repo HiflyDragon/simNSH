@@ -26,10 +26,10 @@ public class GUIUtil {
     }
     
     //显示物品图标及名称
-    public static void setItemIcon(JButton b,String fileName,String tip) {
+    public static void setItemIcon(JButton b,String fileName,String tip,int Width,int Height) {
     	 ImageIcon i = new ImageIcon(new File(imageFolder, fileName).getAbsolutePath());
          b.setIcon(i);
-         b.setPreferredSize(new Dimension(61,91));
+         b.setPreferredSize(new Dimension(Width,Height));
          b.setToolTipText(tip);//鼠标指在按钮上显示的文字，可以用来显示装备信息
          b.setVerticalTextPosition(JButton.BOTTOM);
          b.setHorizontalTextPosition(JButton.CENTER);

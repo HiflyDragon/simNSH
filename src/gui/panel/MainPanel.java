@@ -12,6 +12,7 @@ import util.CenterPanel;
 import util.GUIUtil;
 import java.awt.FlowLayout;
 import javax.swing.JSplitPane;
+import gui.panel.BagPanel;
 
 public class MainPanel extends JPanel{
 	public static MainPanel instance=new MainPanel();
@@ -55,9 +56,6 @@ public class MainPanel extends JPanel{
 		
 		add(tb,BorderLayout.WEST);		
 		add(sp, BorderLayout.CENTER);
-	//	add(workingPanel,BorderLayout.CENTER);
-	//	add(ItemPanel,BorderLayout.EAST);
-		
 	}
 	
 	public static void main(String args[]) {

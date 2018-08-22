@@ -2,50 +2,57 @@ package guitest;
  
 import java.awt.*;
 import java.awt.event.*;
- 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.*;
+
+import util.GUIUtil;
  
 public class SimpleTest extends JFrame {
 	
-	
-	private JButton button;
-	private JPanel buttonPanel, imagePanel;
-	private JScrollPane scrollPane;
 	double count = 0;
- 
+	
 	public SimpleTest(int xPixels, int yPixels) {
-		super("Add Image");
+		super("SimpleTest");
+		JButton button;
+		JPanel buttonPanel;
+		JPanel imagePanel;
+		JScrollPane scrollPane;
+		
+		int bWidth=75;
+		int bHeight=90;
+		Map<String,JButton> b=new HashMap<String,JButton>();
  
 		button = new JButton("Add Image");
 		button.setPreferredSize(new Dimension(80, 25));
 		button.setMargin(new Insets(0, 5, 0, 5));
  
-		
 		imagePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		scrollPane = new JScrollPane(imagePanel);
 		imagePanel.setPreferredSize(new Dimension(xPixels, yPixels));// 这是关键的2句
 		scrollPane.setPreferredSize(new Dimension(xPixels, yPixels));
-		System.out.println(imagePanel.getHeight() + " OOO  "
-				+ imagePanel.getWidth());
  
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				count++;
-				System.out.println("dfdsds");
-				JButton button = new JButton("bu" + count);
-				button.setPreferredSize(new Dimension(200, 200));
-				imagePanel.add(button);
+			//	JButton button = new JButton("bu" + count);
+			//	button.setPreferredSize(new Dimension(200, 200));
+			//	imagePanel.add(button);
+				b.put("b"+count, new JButton("b"+count));
+			//	b.get("b"+count).setPreferredSize(new Dimension(bWidth,bHeight));
+			    GUIUtil.setItemIcon(b.get("b"+count), "item.png", "B"+count, bWidth, bHeight);
+				imagePanel.add(b.get("b"+count));
  
-				System.out.println(imagePanel.getHeight() + " "
-						+ imagePanel.getWidth());
-				int column = (imagePanel.getWidth()) / 200;
-				System.out.println("count " + count);
-				System.out.println("列数  " + column);
+				System.out.println( "宽度："	+ imagePanel.getWidth()+" 高度："+imagePanel.getHeight());
+				System.out.println("按钮数量： " + (int)count);
+				int column = (imagePanel.getWidth()) / bWidth;				
+				System.out.println("当前宽度下的列数（宽度/每个按钮的宽度） ：" + column);
 				double row = count / column;
-				System.out.println("行数 " + row);
+				System.out.println("行数（按钮数量/列数）：" + row);
 				int d = (int) Math.ceil(row);
-			    System.out.println("行数进一 " +d );
-				imagePanel.setPreferredSize(new Dimension(500,(int) (d * 205)));//
+			    System.out.println("行数向上取整 ：" +d );
+				imagePanel.setPreferredSize(new Dimension(xPixels,(int) (d * (bHeight+5)+10)));//
 				//
 				imagePanel.revalidate();
 				imagePanel.repaint();
@@ -64,6 +71,6 @@ public class SimpleTest extends JFrame {
 	}
  
 	public static void main(String[] args) {
-		new SimpleTest(320, 400);
+		new SimpleTest(600, 300);
 	}
 }
