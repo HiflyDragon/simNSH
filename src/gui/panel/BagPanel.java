@@ -11,7 +11,7 @@ import util.GUIUtil;
  
 public class BagPanel extends JPanel {
 	
-	public static BagPanel instance=new BagPanel(600,300);
+	public static BagPanel instance=new BagPanel(700,180);
 	double count = 0;
 	
 	private BagPanel(int xPixels, int yPixels) {
@@ -65,6 +65,6 @@ public class BagPanel extends JPanel {
 	}
  
 	public static void main(String[] args) {
-		GUIUtil.showPanel(BagPanel.instance,1,600,300);
+		GUIUtil.showPanel(BagPanel.instance,1,700,180);
 	}
 }

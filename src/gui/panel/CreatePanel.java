@@ -260,6 +260,6 @@ public class CreatePanel extends JPanel{
 		panelFoot.add(btnKeep);
 	}
 	public static void main(String args[]) {
-		GUIUtil.showPanel(CreatePanel.instance,1,330,520);
+		GUIUtil.showPanel(CreatePanel.instance,1,350,520);
 	}
 }
