@@ -14,7 +14,7 @@ public class BagPanel extends JPanel {
 	public static BagPanel instance=new BagPanel(600,300);
 	double count = 0;
 	
-	public BagPanel(int xPixels, int yPixels) {
+	private BagPanel(int xPixels, int yPixels) {
 		JButton button;
 		JPanel buttonPanel;
 		JPanel bagPanel;

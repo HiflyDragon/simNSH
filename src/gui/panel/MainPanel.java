@@ -63,6 +63,6 @@ public class MainPanel extends JPanel{
 		workingPanel.show(CreatePanel.instance);
 		ItemPanel.setBounds(10, 150, 300, 60);
 		ItemPanel.show(BagPanel.instance);
-		GUIUtil.showPanel(MainPanel.instance, 1);
+		GUIUtil.showPanel(MainPanel.instance, 1,800,700);
 	}
 }
