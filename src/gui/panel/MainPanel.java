@@ -12,6 +12,8 @@ import util.CenterPanel;
 import util.GUIUtil;
 import java.awt.FlowLayout;
 import javax.swing.JSplitPane;
+
+import gui.listener.ToolBarListener;
 import gui.panel.BagPanel;
 
 public class MainPanel extends JPanel{
@@ -56,6 +58,19 @@ public class MainPanel extends JPanel{
 		
 		add(tb,BorderLayout.WEST);		
 		add(sp, BorderLayout.CENTER);
+		
+		addListener();
+	}
+	
+	private void addListener() {
+		ToolBarListener listener=new ToolBarListener();
+		
+		bCreate.addActionListener(listener);
+		bStrengthen.addActionListener(listener);
+		bInlay.addActionListener(listener);
+		bRefine.addActionListener(listener);
+		bRecombine.addActionListener(listener);
+		bReforge.addActionListener(listener);
 	}
 	
 	public static void main(String args[]) {
