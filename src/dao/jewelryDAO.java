@@ -7,6 +7,6 @@ public class jewelryDAO {
 	
 	public void add(Jewelry jewelery) {
 		
-		String sql="insert into jewelry values("
+		String sql="insert into jewelry values(";
 	}
 }

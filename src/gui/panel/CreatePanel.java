@@ -18,11 +18,16 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Component;
 import javax.swing.JTextPane;
+
+import gui.listener.CreateListener;
+
 import javax.swing.JTextArea;
 import java.awt.Font;
 
 public class CreatePanel extends JPanel{
 	public static CreatePanel instance=new CreatePanel();
+	public JButton btnCreate = new JButton("\u751F\u6210");
+	public JButton btnKeep = new JButton("\u4FDD\u7559");
 	
 	private CreatePanel() {
 		setLayout(null);
@@ -249,17 +254,23 @@ public class CreatePanel extends JPanel{
 		lblNull.setBounds(150, 0, 150, 23);
 		panelFoot.add(lblNull);
 		
-		JButton btnCreate = new JButton("\u751F\u6210");
+		
 		btnCreate.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
 		btnCreate.setBounds(0, 23, 131, 43);
 		panelFoot.add(btnCreate);
-		
-		JButton btnKeep = new JButton("\u4FDD\u7559");
+
 		btnKeep.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
 		btnKeep.setBounds(160, 23, 140, 43);
 		panelFoot.add(btnKeep);
+		
+		addListener();
 	}
 	public static void main(String args[]) {
 		GUIUtil.showPanel(CreatePanel.instance,1,350,520);
+	}
+	
+	public void addListener() {
+		CreateListener l=new CreateListener();
+		btnCreate.addActionListener(l);
 	}
 }
