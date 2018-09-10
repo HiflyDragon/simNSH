@@ -41,6 +41,8 @@ public class BagPanel extends JPanel {
 			
 				b.put("b"+count, new JButton("b"+count));
 			    GUIUtil.setItemIcon(b.get("b"+count), "item.png", "B"+count, bWidth, bHeight);
+			    //通过setToolTipText来显示详细信息
+			    b.get("b"+count).setToolTipText("<html>Hello"+count+"<br>Hi"+count+"</html>");
 				bagPanel.add(b.get("b"+count));
  
 				int column = (bagPanel.getWidth()) / (bWidth+gap);				
