@@ -23,23 +23,32 @@ import gui.listener.CreateListener;
 
 import javax.swing.JTextArea;
 import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import javax.swing.JEditorPane;
 
 public class CreatePanel extends JPanel{
 	public static CreatePanel instance=new CreatePanel();
-	public JButton btnCreate = new JButton("\u751F\u6210");
-	public JButton btnKeep = new JButton("\u4FDD\u7559");
+	public JButton btnCreate = new JButton("生成");
+	public JButton btnKeep = new JButton("保留");
 	
 	private CreatePanel() {
 		setLayout(null);
 		
-		JPanel createtool = new JPanel();
-		createtool.setBounds(0, 0, 350, 600);
-		add(createtool);
-		createtool.setLayout(null);
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setBounds(0,0,700,520);
+		splitPane.setDividerLocation(350);
+		add(splitPane);
+		
+		JPanel choosePanel = new JPanel();
+		//choosePanel.setBounds(0, 0, 350, 520);
+		//add(choosePanel);
+		splitPane.setLeftComponent(choosePanel);
+		choosePanel.setLayout(null);
 		
 		JPanel panelTop = new JPanel();
 		panelTop.setBounds(0, 0, 300, 33);
-		createtool.add(panelTop);
+		choosePanel.add(panelTop);
 		panelTop.setLayout(null);
 		
 		JLabel lblName = new JLabel("\u540D\u79F0\uFF1A");
@@ -60,7 +69,7 @@ public class CreatePanel extends JPanel{
 		
 		JPanel panelMid = new JPanel();
 		panelMid.setBounds(0, 33, 300, 371);
-		createtool.add(panelMid);
+		choosePanel.add(panelMid);
 		panelMid.setLayout(null);
 		
 		JPanel panelChoose = new JPanel();
@@ -223,26 +232,26 @@ public class CreatePanel extends JPanel{
 		label.setBounds(10, 10, 195, 15);
 		panelAffix.add(label);
 		
-		JLabel label_1 = new JLabel("\u6700\u5C0F\u5185\u529F\u653B\u51FB:+76\uFF0C\u6700\u5927\u5185\u529F\u653B\u51FB:+140");
+		JLabel label_1 = new JLabel("\u6700\u5C0F\u5185\u529F\u653B\u51FB:+90\uFF0C\u6700\u5927\u5185\u529F\u653B\u51FB:+140");
 		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		label_1.setAlignmentY(1.0f);
 		label_1.setBounds(10, 25, 239, 15);
 		panelAffix.add(label_1);
 		
-		JLabel label_2 = new JLabel("\u7D20\u95EE\u5FC3\u6CD5\u300C\u9EDB\u9999\u300D:+2");
+		JLabel label_2 = new JLabel("\u7D20\u95EE\u6280\u80FD\u300C\u60DC\u6625\u300D:+4");
 		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		label_2.setAlignmentY(1.0f);
 		label_2.setBounds(10, 55, 239, 15);
 		panelAffix.add(label_2);
 		
-		JLabel label_3 = new JLabel("\u7D20\u95EE\u5FC3\u6CD5\u300C\u9EDB\u9999\u300D:+2");
+		JLabel label_3 = new JLabel("\u7D20\u95EE\u5FC3\u6CD5\u300C\u9EDB\u9999\u300D:+4");
 		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		label_3.setBounds(10, 40, 195, 15);
 		panelAffix.add(label_3);
 		
 		JPanel panelFoot = new JPanel();
 		panelFoot.setBounds(0, 414, 300, 76);
-		createtool.add(panelFoot);
+		choosePanel.add(panelFoot);
 		panelFoot.setLayout(null);
 		
 		JCheckBox chckbxKeep = new JCheckBox("\u751F\u6210\u540E\u76F4\u63A5\u4FDD\u7559");
@@ -263,10 +272,83 @@ public class CreatePanel extends JPanel{
 		btnKeep.setBounds(160, 23, 140, 43);
 		panelFoot.add(btnKeep);
 		
+		JPanel showPanel = new JPanel();
+		splitPane.setRightComponent(showPanel);
+		showPanel.setLayout(new BorderLayout(0, 0));
+		
+//		JLabel showIcon=new JLabel("Test");
+//		showIcon.setHorizontalAlignment(SwingConstants.CENTER);
+//		showIcon.setIcon(new ImageIcon("E:\\project\\simNSH\\img\\item.png"));
+//		showPanel.add(showIcon,BorderLayout.NORTH);
+		
+		JTextPane jtp = new JTextPane();
+		jtp.setContentType("text/html");
+		jtp.setEditable(false);
+		//txtpnThisIsA.setText("This is where show text");
+		//txtpnThisIsA.setText("<html>Hello6<br>Hi6</html>");
+		jtp.setText("<html>\r\n" + 
+				"	<style>\r\n" + 
+				"		div.border{\r\n" + 
+				"			width:248px;\r\n" + 
+				"			border:5px solid #8A2BE2;\r\n" + 
+				"			padding:0 10 10 10;\r\n" + 
+				"			background-color:black;\r\n" + 
+				"			}\r\n" + 
+				"		div.top {			\r\n" + 
+				"			width:248px;\r\n" + 
+				"			background-color:#8A2BE2;\r\n" + 
+				"			font-size:25px;\r\n" + 
+				"			color:white;\r\n" + 
+				"			}\r\n" + 
+				"		span.solid{\r\n" + 
+				"			border:solid red;\r\n" + 
+				"			color:red;\r\n" + 
+				"		}\r\n" + 
+				"		span.title{\r\n" + 
+				"			color:#fdf3b9;\r\n" + 
+				"		}\r\n" + 
+				"		span.value{\r\n" + 
+				"			color:white;\r\n" + 
+				"		}\r\n" + 
+				"		span.alignright{\r\n" + 
+				"			float:right;\r\n" + 
+				"			color:white;\r\n" + 
+				"		}\r\n" + 
+				"	</style>\r\n" + 
+				"	<body>\r\n" + 
+				"		<div class='top'>&emsp;刘涓子·闭月回雪缎</div>\r\n" + 
+				"	<div class='border'>		\r\n" + 
+				"		<div class='1st'>\r\n" + 
+				"		<br>\r\n" + 
+				"			<span class='alignright'><span class='solid'><strong>百炼</strong></span></span><br>\r\n" + 
+				"		<br>\r\n" + 
+				"			<span class='title'>等级要求：</span><span class='value'>60</span><span class='alignright'>丝带</span>\r\n" + 
+				"		<br>\r\n" + 
+				"			<span class='title'>职业要求：</span><span class='value'>素问</span><br>\r\n" + 
+				"		</div>\r\n" + 
+				"		<hr>\r\n" + 
+				"			<span class='title'>外功攻击：</span><span class='value'>193-453</span><span class='title'>(223-520)</span><br>\r\n" + 
+				"			<span class='title'>内功攻击：</span><span class='value'>212-520</span><span class='title'>(223-520)</span><br>\r\n" + 
+				"			<span class='title'>攻击速度：</span><span class='value'>1.02</span>\r\n" + 
+				"				<span class='title'>(1.06 <span class='block'><font color='red'>刘涓子·霜天护腕</font></span>)</span><br>\r\n" + 
+				"			<span class='title'>攻击范围：</span><span class='value'>0.93</span>\r\n" + 
+				"				<span class='title'>(0.96 <span class='block'><font color='red'>刘涓子·碧牙绸缎</font></span>)</span><br>\r\n" + 
+				"			<span class='title'>攻击效果：</span><span class='value'><font color='#8A2BE2'>每次施法有5.00%几率触发6秒6级治疗加成效果</font></span>\r\n" + 
+				"				<span class='title'>(1.06 <span class='block'><font color='red'>刘涓子·碧牙坠环</font></span>)</span><br>\r\n" + 
+				"		<hr>\r\n" + 
+				"			<font color='#8A2BE2'>气海：+12<br>最小内功攻击：+90，最大内功攻击+140<br>素问心法「黛香」：+3<br>素问技能「惜春」：+3</font><br>\r\n" + 
+				"			<font color='#7CFC00'>[刘涓子]<br>≮断玉≯最大基础内功攻击 +12.0%</font><br>\r\n" + 
+				"			<font color='red'>武器契合<br>最小内功攻击 +110，最大内功攻击 +169</font><br>\r\n" + 
+				"	</div>\r\n" + 
+				"	</body>\r\n" + 
+				"</html>");
+		
+		showPanel.add(jtp, BorderLayout.CENTER);		
+		
 		addListener();
 	}
 	public static void main(String args[]) {
-		GUIUtil.showPanel(CreatePanel.instance,1,350,520);
+		GUIUtil.showPanel(CreatePanel.instance,1,700,520);
 	}
 	
 	public void addListener() {
