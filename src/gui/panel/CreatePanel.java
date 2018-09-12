@@ -238,13 +238,13 @@ public class CreatePanel extends JPanel{
 		label_1.setBounds(10, 25, 239, 15);
 		panelAffix.add(label_1);
 		
-		JLabel label_2 = new JLabel("\u7D20\u95EE\u6280\u80FD\u300C\u60DC\u6625\u300D:+4");
+		JLabel label_2 = new JLabel("\u7D20\u95EE\u6280\u80FD\u300C\u60DC\u6625\u300D:+3");
 		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		label_2.setAlignmentY(1.0f);
 		label_2.setBounds(10, 55, 239, 15);
 		panelAffix.add(label_2);
 		
-		JLabel label_3 = new JLabel("\u7D20\u95EE\u5FC3\u6CD5\u300C\u9EDB\u9999\u300D:+4");
+		JLabel label_3 = new JLabel("\u7D20\u95EE\u5FC3\u6CD5\u300C\u9EDB\u9999\u300D:+3");
 		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		label_3.setBounds(10, 40, 195, 15);
 		panelAffix.add(label_3);
@@ -286,46 +286,35 @@ public class CreatePanel extends JPanel{
 		jtp.setEditable(false);
 		//txtpnThisIsA.setText("This is where show text");
 		//txtpnThisIsA.setText("<html>Hello6<br>Hi6</html>");
-		jtp.setText("<html>\r\n" + 
+		jtp.setText(
+				"<html>\r\n" + 
 				"	<style>\r\n" + 
 				"		div.border{\r\n" + 
-				"			width:248px;\r\n" + 
+				"			width:250px;\r\n" + 
 				"			border:5px solid #8A2BE2;\r\n" + 
 				"			padding:0 10 10 10;\r\n" + 
 				"			background-color:black;\r\n" + 
 				"			}\r\n" + 
-				"		div.top {			\r\n" + 
-				"			width:248px;\r\n" + 
+				"		div.top {\r\n" + 
+				"			width:250px;\r\n" + 
 				"			background-color:#8A2BE2;\r\n" + 
 				"			font-size:25px;\r\n" + 
 				"			color:white;\r\n" + 
 				"			}\r\n" + 
-				"		span.solid{\r\n" + 
-				"			border:solid red;\r\n" + 
-				"			color:red;\r\n" + 
-				"		}\r\n" + 
 				"		span.title{\r\n" + 
 				"			color:#fdf3b9;\r\n" + 
 				"		}\r\n" + 
 				"		span.value{\r\n" + 
 				"			color:white;\r\n" + 
 				"		}\r\n" + 
-				"		span.alignright{\r\n" + 
-				"			float:right;\r\n" + 
-				"			color:white;\r\n" + 
-				"		}\r\n" + 
 				"	</style>\r\n" + 
 				"	<body>\r\n" + 
 				"		<div class='top'>&emsp;刘涓子·闭月回雪缎</div>\r\n" + 
-				"	<div class='border'>		\r\n" + 
-				"		<div class='1st'>\r\n" + 
-				"		<br>\r\n" + 
-				"			<span class='alignright'><span class='solid'><strong>百炼</strong></span></span><br>\r\n" + 
-				"		<br>\r\n" + 
-				"			<span class='title'>等级要求：</span><span class='value'>60</span><span class='alignright'>丝带</span>\r\n" + 
-				"		<br>\r\n" + 
+				"	<div class='border'>\r\n" + 
+				"			<font color='red'><strong>百炼</strong></font><br>\r\n" + 
+				"			<font color='white'>丝带</font><br>\r\n" + 
+				"			<span class='title'>等级要求：</span><span class='value'>60</span><br>		\r\n" + 
 				"			<span class='title'>职业要求：</span><span class='value'>素问</span><br>\r\n" + 
-				"		</div>\r\n" + 
 				"		<hr>\r\n" + 
 				"			<span class='title'>外功攻击：</span><span class='value'>193-453</span><span class='title'>(223-520)</span><br>\r\n" + 
 				"			<span class='title'>内功攻击：</span><span class='value'>212-520</span><span class='title'>(223-520)</span><br>\r\n" + 
@@ -338,7 +327,7 @@ public class CreatePanel extends JPanel{
 				"		<hr>\r\n" + 
 				"			<font color='#8A2BE2'>气海：+12<br>最小内功攻击：+90，最大内功攻击+140<br>素问心法「黛香」：+3<br>素问技能「惜春」：+3</font><br>\r\n" + 
 				"			<font color='#7CFC00'>[刘涓子]<br>≮断玉≯最大基础内功攻击 +12.0%</font><br>\r\n" + 
-				"			<font color='red'>武器契合<br>最小内功攻击 +110，最大内功攻击 +169</font><br>\r\n" + 
+				"		<br>\r\n" + 
 				"	</div>\r\n" + 
 				"	</body>\r\n" + 
 				"</html>");

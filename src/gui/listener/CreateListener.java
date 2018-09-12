@@ -5,12 +5,13 @@ import entity.*;
 import java.awt.event.ActionListener;
 
 import gui.panel.CreatePanel;
+import gui.panel.BagPanel;
 
 public class CreateListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		CreatePanel p=CreatePanel.instance;
+//		CreatePanel p=CreatePanel.instance;
 		
 		Jewelry ring=new Jewelry();
 		ring.setId(0);//零号机
@@ -26,8 +27,8 @@ public class CreateListener implements ActionListener {
 		ring.setStrengthen(0);//强化级别0
 		ring.setSmelting(false);//非百炼
 		
-		ring.show();
-		
+//		ring.show();
+		BagPanel.addItem();
 	}
 
 }

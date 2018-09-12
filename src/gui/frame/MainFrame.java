@@ -10,7 +10,7 @@ public class MainFrame extends JFrame{
      
     private MainFrame(){
         this.setSize(800,700);
-        this.setTitle("simNSH");
+        this.setTitle("逆水寒忠肝义胆之人模拟器 								   by ShiroMaple白枫 ");
         this.setContentPane(MainPanel.instance);
         this.setLocationRelativeTo(null);
        // this.setResizable(false);

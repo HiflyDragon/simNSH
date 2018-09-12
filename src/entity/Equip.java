@@ -110,8 +110,8 @@ public abstract class Equip {
 	public void setInternal(boolean isInternal) {
 		this.isInternal = isInternal;
 	}
-	public void show() {
-		System.out.println(this.getName());
-		System.out.println("等级要求："+this.getLevel());
-	}
+//	public void show() {
+//		System.out.println(this.getName());
+//		System.out.println("等级要求："+this.getLevel());
+//	}
 }
