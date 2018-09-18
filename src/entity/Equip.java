@@ -10,7 +10,7 @@ public abstract class Equip {
 	private int level;
 	//等级 范围1~100
 	private int quality;
-	//品质 0白 1黄 2绿 3蓝 4红 5紫 6百炼 7橙
+	//品质 0白 1黄 2绿 3蓝 4红 5紫 6橙
 	//private int durability;
 	//装备耐久
 	private int sect;

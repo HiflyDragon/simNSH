@@ -32,7 +32,16 @@ public class CreatePanel extends JPanel{
 	public JButton btnCreate = new JButton("生成");
 	public JButton btnKeep = new JButton("保留");
 	
-	private CreatePanel() {
+	public JComboBox comboBoxQuality = new JComboBox();
+	public JComboBox comboBoxPart = new JComboBox();		
+	public JComboBox comboBoxLevel = new JComboBox();		
+	public JComboBox comboBoxSect = new JComboBox();
+	public JLabel lblAttrib1 = new JLabel();
+	public JLabel lblAttrib2 = new JLabel();
+	public JLabel lblAttrib3 = new JLabel();
+	public JLabel lblAttrib4 = new JLabel();
+	
+	public CreatePanel() {
 		setLayout(null);
 		
 		JSplitPane splitPane = new JSplitPane();
@@ -77,49 +86,45 @@ public class CreatePanel extends JPanel{
 		panelMid.add(panelChoose);
 		panelChoose.setLayout(null);
 		
-		JLabel lblQuality = new JLabel("\u54C1\u8D28\uFF1A");
+		JLabel lblQuality = new JLabel("品质：");
 		lblQuality.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		lblQuality.setBounds(10, 10, 48, 15);
 		panelChoose.add(lblQuality);
-		
-		JComboBox comboBoxQuality = new JComboBox();
+			
 		comboBoxQuality.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-		comboBoxQuality.setBounds(56, 3, 62, 21);
+		comboBoxQuality.setBounds(56, 3, 77, 21);
 		panelChoose.add(comboBoxQuality);
-		comboBoxQuality.setModel(new DefaultComboBoxModel(new String[] {"\u7D2B"}));
+		comboBoxQuality.setModel(new DefaultComboBoxModel(new String[] {"蓝及以上","红及以上","蓝","红","紫"}));
 		
-		JLabel lblPart = new JLabel("\u90E8\u4F4D\uFF1A");
+		JLabel lblPart = new JLabel("部位：");
 		lblPart.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-		lblPart.setBounds(126, 7, 48, 15);
+		lblPart.setBounds(159, 10, 36, 15);
 		panelChoose.add(lblPart);
 		
-		JComboBox comboBoxPart = new JComboBox();
 		comboBoxPart.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-		comboBoxPart.setBounds(166, 3, 77, 21);
+		comboBoxPart.setBounds(198, 3, 77, 21);
 		panelChoose.add(comboBoxPart);
-		comboBoxPart.setModel(new DefaultComboBoxModel(new String[] {"\u6B66\u5668"}));
+		comboBoxPart.setModel(new DefaultComboBoxModel(new String[] {"随机","武器","项链","手镯","戒指","头部","上衣","腕部","手套","腰带","鞋子",}));
 		
-		JLabel lblLevel = new JLabel("\u7B49\u7EA7\uFF1A");
+		JLabel lblLevel = new JLabel("等级：");
 		lblLevel.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		lblLevel.setBounds(10, 35, 48, 15);
 		panelChoose.add(lblLevel);
-		
-		JComboBox comboBoxLevel = new JComboBox();
+
 		comboBoxLevel.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-		comboBoxLevel.setBounds(56, 29, 63, 21);
+		comboBoxLevel.setBounds(56, 29, 77, 21);
 		panelChoose.add(comboBoxLevel);
-		comboBoxLevel.setModel(new DefaultComboBoxModel(new String[] {"60"}));
+		comboBoxLevel.setModel(new DefaultComboBoxModel(new String[] {"60~69"}));
 		
-		JLabel lblSect = new JLabel("\u6D41\u6D3E\uFF1A");
+		JLabel lblSect = new JLabel("流派：");
 		lblSect.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-		lblSect.setBounds(126, 32, 48, 15);
+		lblSect.setBounds(159, 32, 36, 15);
 		panelChoose.add(lblSect);
-		
-		JComboBox comboBoxSect = new JComboBox();
+
 		comboBoxSect.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-		comboBoxSect.setBounds(166, 29, 77, 21);
+		comboBoxSect.setBounds(198, 29, 77, 21);
 		panelChoose.add(comboBoxSect);
-		comboBoxSect.setModel(new DefaultComboBoxModel(new String[] {"\u7D20\u95EE"}));
+		comboBoxSect.setModel(new DefaultComboBoxModel(new String[] {"随机","血河","铁衣","神相","九灵","素问","碎梦"}));
 		
 		JPanel panelAttrib = new JPanel();
 		panelAttrib.setBounds(0, 60, 300, 210);
@@ -131,23 +136,23 @@ public class CreatePanel extends JPanel{
 		panelAttrib.add(panelBasicAttrib);
 		panelBasicAttrib.setLayout(null);
 		
-		JLabel lblAttrib1 = new JLabel("\u5916\u529F\u653B\u51FB\uFF1A193-453[223-520]");
+		lblAttrib1.setText("待定");
 		lblAttrib1.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		lblAttrib1.setBounds(10, 5, 195, 15);
 		panelBasicAttrib.add(lblAttrib1);
 		
-		JLabel lblAttrib2 = new JLabel("\u5185\u529F\u653B\u51FB\uFF1A212-428[223-520]");
+		lblAttrib2.setText("待定");
 		lblAttrib2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		lblAttrib2.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		lblAttrib2.setBounds(10, 20, 195, 15);
 		panelBasicAttrib.add(lblAttrib2);
 		
-		JLabel lblAttrib3 = new JLabel("");
+		lblAttrib3.setText("待定");
 		lblAttrib3.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		lblAttrib3.setBounds(10, 35, 195, 15);
 		panelBasicAttrib.add(lblAttrib3);
 		
-		JLabel lblAttrib4 = new JLabel("");
+		lblAttrib4.setText("待定");
 		lblAttrib4.setFont(new Font("微软雅黑", Font.PLAIN, 12));
 		lblAttrib4.setBounds(10, 50, 195, 15);
 		panelBasicAttrib.add(lblAttrib4);
@@ -287,50 +292,7 @@ public class CreatePanel extends JPanel{
 		//txtpnThisIsA.setText("This is where show text");
 		//txtpnThisIsA.setText("<html>Hello6<br>Hi6</html>");
 		jtp.setText(
-				"<html>\r\n" + 
-				"	<style>\r\n" + 
-				"		div.border{\r\n" + 
-				"			width:250px;\r\n" + 
-				"			border:5px solid #8A2BE2;\r\n" + 
-				"			padding:0 10 10 10;\r\n" + 
-				"			background-color:black;\r\n" + 
-				"			}\r\n" + 
-				"		div.top {\r\n" + 
-				"			width:250px;\r\n" + 
-				"			background-color:#8A2BE2;\r\n" + 
-				"			font-size:25px;\r\n" + 
-				"			color:white;\r\n" + 
-				"			}\r\n" + 
-				"		span.title{\r\n" + 
-				"			color:#fdf3b9;\r\n" + 
-				"		}\r\n" + 
-				"		span.value{\r\n" + 
-				"			color:white;\r\n" + 
-				"		}\r\n" + 
-				"	</style>\r\n" + 
-				"	<body>\r\n" + 
-				"		<div class='top'>&emsp;刘涓子·闭月回雪缎</div>\r\n" + 
-				"	<div class='border'>\r\n" + 
-				"			<font color='red'><strong>百炼</strong></font><br>\r\n" + 
-				"			<font color='white'>丝带</font><br>\r\n" + 
-				"			<span class='title'>等级要求：</span><span class='value'>60</span><br>		\r\n" + 
-				"			<span class='title'>职业要求：</span><span class='value'>素问</span><br>\r\n" + 
-				"		<hr>\r\n" + 
-				"			<span class='title'>外功攻击：</span><span class='value'>193-453</span><span class='title'>(223-520)</span><br>\r\n" + 
-				"			<span class='title'>内功攻击：</span><span class='value'>212-520</span><span class='title'>(223-520)</span><br>\r\n" + 
-				"			<span class='title'>攻击速度：</span><span class='value'>1.02</span>\r\n" + 
-				"				<span class='title'>(1.06 <span class='block'><font color='red'>刘涓子·霜天护腕</font></span>)</span><br>\r\n" + 
-				"			<span class='title'>攻击范围：</span><span class='value'>0.93</span>\r\n" + 
-				"				<span class='title'>(0.96 <span class='block'><font color='red'>刘涓子·碧牙绸缎</font></span>)</span><br>\r\n" + 
-				"			<span class='title'>攻击效果：</span><span class='value'><font color='#8A2BE2'>每次施法有5.00%几率触发6秒6级治疗加成效果</font></span>\r\n" + 
-				"				<span class='title'>(1.06 <span class='block'><font color='red'>刘涓子·碧牙坠环</font></span>)</span><br>\r\n" + 
-				"		<hr>\r\n" + 
-				"			<font color='#8A2BE2'>气海：+12<br>最小内功攻击：+90，最大内功攻击+140<br>素问心法「黛香」：+3<br>素问技能「惜春」：+3</font><br>\r\n" + 
-				"			<font color='#7CFC00'>[刘涓子]<br>≮断玉≯最大基础内功攻击 +12.0%</font><br>\r\n" + 
-				"		<br>\r\n" + 
-				"	</div>\r\n" + 
-				"	</body>\r\n" + 
-				"</html>");
+				"");
 		
 		showPanel.add(jtp, BorderLayout.CENTER);		
 		
