@@ -57,6 +57,7 @@ public class CreatePanel extends JPanel {
 	public JComboBox affix2=new JComboBox();
 	public JComboBox affix3=new JComboBox();
 	public JComboBox affix4=new JComboBox();
+	public JTextPane jtp = new JTextPane();
 	
 
 	public CreatePanel() {
@@ -106,17 +107,17 @@ public class CreatePanel extends JPanel {
 		panelChoose.add(lblQuality);
 
 		comboBoxQuality.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		comboBoxQuality.setBounds(56, 3, 77, 21);
+		comboBoxQuality.setBounds(50, 7, 77, 21);
 		panelChoose.add(comboBoxQuality);
 		comboBoxQuality.setModel(new DefaultComboBoxModel(Data.QualityRange));
 
 		JLabel lblPart = new JLabel("²¿Î»£º");
 		lblPart.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		lblPart.setBounds(159, 10, 36, 15);
+		lblPart.setBounds(152, 10, 36, 15);
 		panelChoose.add(lblPart);
 
 		comboBoxPart.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		comboBoxPart.setBounds(198, 3, 77, 21);
+		comboBoxPart.setBounds(186, 7, 77, 21);
 		panelChoose.add(comboBoxPart);
 		comboBoxPart.setModel(new DefaultComboBoxModel(Data.PartRange));
 
@@ -126,17 +127,17 @@ public class CreatePanel extends JPanel {
 		panelChoose.add(lblLevel);
 
 		comboBoxLevel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		comboBoxLevel.setBounds(56, 29, 77, 21);
+		comboBoxLevel.setBounds(50, 29, 77, 21);
 		panelChoose.add(comboBoxLevel);
 		comboBoxLevel.setModel(new DefaultComboBoxModel(Data.LevelRange));
 
 		JLabel lblSect = new JLabel("Á÷ÅÉ£º");
 		lblSect.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		lblSect.setBounds(159, 32, 36, 15);
+		lblSect.setBounds(152, 35, 36, 15);
 		panelChoose.add(lblSect);
 
 		comboBoxSect.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		comboBoxSect.setBounds(198, 29, 77, 21);
+		comboBoxSect.setBounds(186, 32, 77, 21);
 		panelChoose.add(comboBoxSect);
 		comboBoxSect.setModel(new DefaultComboBoxModel(Data.SectRange));
 
@@ -298,12 +299,10 @@ public class CreatePanel extends JPanel {
 //		showIcon.setIcon(new ImageIcon("E:\\project\\simNSH\\img\\item.png"));
 //		showPanel.add(showIcon,BorderLayout.NORTH);
 
-		JTextPane jtp = new JTextPane();
 		jtp.setContentType("text/html");
 		jtp.setEditable(false);
 		// txtpnThisIsA.setText("This is where show text");
 		// txtpnThisIsA.setText("<html>Hello6<br>Hi6</html>");
-		jtp.setText("");
 
 		showPanel.add(jtp, BorderLayout.CENTER);
 

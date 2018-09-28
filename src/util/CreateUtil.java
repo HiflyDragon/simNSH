@@ -7,7 +7,7 @@ public class CreateUtil {
 	}
 	public static void main(String args[]) {
 		for (int i=0;i<20;i++) {
-		System.out.print(randomValue(0,10)+" ");
+		System.out.print(randomValue(2,4)+" ");
 		}
 	}
 }
