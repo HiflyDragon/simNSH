@@ -42,6 +42,7 @@ public class CreatePanel extends JPanel {
 
 	public JComboBox comboBoxName = new JComboBox();
 	public JComboBox comboBoxQuality = new JComboBox();
+	public JCheckBox chckbxSmelting = new JCheckBox("∞Ÿ¡∂");
 	public JComboBox comboBoxPart = new JComboBox();
 	public JComboBox comboBoxLevel = new JComboBox();
 	public JComboBox comboBoxSect = new JComboBox();
@@ -85,7 +86,6 @@ public class CreatePanel extends JPanel {
 		comboBoxName.setModel(new DefaultComboBoxModel(Data.NameRange));
 		panelTop.add(comboBoxName);
 
-		JCheckBox chckbxSmelting = new JCheckBox("∞Ÿ¡∂");
 		chckbxSmelting.setFont(new Font("Œ¢»Ì—≈∫⁄", Font.PLAIN, 12));
 		chckbxSmelting.setBounds(169, 5, 68, 23);
 		panelTop.add(chckbxSmelting);

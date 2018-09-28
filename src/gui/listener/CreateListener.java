@@ -20,6 +20,9 @@ public class CreateListener implements ActionListener {
 		System.out.print(CreatePanel.instance.comboBoxQuality.getSelectedItem()+" ");
 		System.out.println(CreatePanel.instance.comboBoxQuality.getSelectedIndex());
 		
+		if(CreatePanel.instance.chckbxSmelting.isSelected())
+			System.out.println("∞Ÿ¡∂");
+		
 		System.out.print(CreatePanel.instance.comboBoxPart.getSelectedItem()+" ");
 		System.out.println(CreatePanel.instance.comboBoxPart.getSelectedIndex());
 		
