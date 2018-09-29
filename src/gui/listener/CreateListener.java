@@ -7,13 +7,14 @@ import java.io.IOException;
 
 import gui.panel.CreatePanel;
 import gui.panel.BagPanel;
+import util.ColorUtil;
 
 public class CreateListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int currentQuality;
-		String currentColor="white";
+		String currentColor="#8A2BE2";
 		//清屏
 System.out.println();
 System.out.println();
@@ -115,6 +116,6 @@ System.out.println();
 		//向背包中添加物品
 		BagPanel.addItem();
 		
+		
 	}
-
 }

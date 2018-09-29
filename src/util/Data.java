@@ -10,4 +10,7 @@ public class Data {
 	public static String suwen60Block1[]= new String[] {"随机","刘涓子·霜天护腕" };
 	public static String suwen60Block2[]= new String[] {"随机","刘涓子·碧牙绸缎" };
 	public static String suwen60Block3[]= new String[] {"随机","刘涓子·碧牙坠环" };
+	
+	//SW60ZW素问60紫武
+	public static String SW60ZW[] =new String[] {"蔽月回雪缎","60","5","3","0"};
 }
