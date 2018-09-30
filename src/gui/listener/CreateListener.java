@@ -1,6 +1,7 @@
 package gui.listener;
 
 import java.awt.event.ActionEvent;
+
 import entity.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.io.IOException;
 import gui.panel.CreatePanel;
 import gui.panel.BagPanel;
 import util.ColorUtil;
+import entity.purpleWeapon;
 
 public class CreateListener implements ActionListener {
 
@@ -15,20 +17,10 @@ public class CreateListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int currentQuality;
 		String currentColor="#8A2BE2";
-		//清屏
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
-System.out.println();
+
 		
 //接受选择的数据
+		System.out.println("传入参数：");
 		if(CreatePanel.instance.comboBoxName.getSelectedIndex()!=0) {
 			System.out.print(CreatePanel.instance.comboBoxName.getSelectedItem()+" ");
 			System.out.println(CreatePanel.instance.comboBoxName.getSelectedIndex());
@@ -36,16 +28,6 @@ System.out.println();
 
 		System.out.print(CreatePanel.instance.comboBoxQuality.getSelectedItem()+" ");
 		System.out.println(CreatePanel.instance.comboBoxQuality.getSelectedIndex());
-		
-		{
-		//根据选择的范围产生随机的品质
-		currentQuality=CreatePanel.instance.comboBoxQuality.getSelectedIndex();
-		if (currentQuality==0) currentQuality=(int)Math.rint(2*Math.random()+2);
-		if (currentQuality==1) currentQuality=(int)Math.rint(1*Math.random()+3);
-		if (currentQuality==2) currentColor="blue";
-		if (currentQuality==3) currentColor="red";	
-		if (currentQuality==4) currentColor="#8A2BE2";
-		}
 		
 		if(CreatePanel.instance.chckbxSmelting.isSelected())
 			System.out.println("百炼");
@@ -67,6 +49,28 @@ System.out.println();
 			System.out.print(CreatePanel.instance.comboBlock3.getSelectedItem()+" ");
 			System.out.println(CreatePanel.instance.comboBlock3.getSelectedIndex());
 		}
+		
+		System.out.println();
+		System.out.println("产生结果：");
+		Equip tempEquip=new purpleWeapon("蔽月回雪缎");
+		System.out.println(tempEquip.getName());
+		System.out.println(tempEquip.getLevel());
+		System.out.println(tempEquip.getQuality());
+		System.out.println(tempEquip.getSect());
+		System.out.println(tempEquip.getPart());
+		switch(tempEquip.getQuality()) {
+		case "蓝":
+			currentColor="blue";
+			break;
+		case "红":
+			currentColor="red";
+			break;
+		case "紫":
+			currentColor="#8A2BE2";
+			break;
+		}
+		
+		
 		//在CreatePanel的右侧面板显示物品信息 以后专门写一个类生成HTML格式内容
 		CreatePanel.instance.jtp.setText("<html>\r\n" + 
 				"	<style>\r\n" + 
@@ -90,12 +94,12 @@ System.out.println();
 				"		}\r\n" + 
 				"	</style>\r\n" + 
 				"	<body>\r\n" + 
-				"		<div class='top'>&emsp;刘涓子·闭月回雪缎</div>\r\n" + 
+				"		<div class='top'>&emsp;刘涓子·"+tempEquip.getName()+"</div>\r\n" + 
 				"	<div class='border'>\r\n" + 
 				"			<font color='red'><strong>百炼</strong></font><br>\r\n" + 
-				"			<font color='white'>丝带</font><br>\r\n" + 
-				"			<span class='title'>等级要求：</span><span class='value'>60</span><br>		\r\n" + 
-				"			<span class='title'>职业要求：</span><span class='value'>"+CreatePanel.instance.comboBoxSect.getSelectedItem()+"</span><br>\r\n" + 
+				"			<font color='white'>"+tempEquip.getPart()+"</font><br>\r\n" + 
+				"			<span class='title'>等级要求：</span><span class='value'>"+tempEquip.getLevel()+"</span><br>		\r\n" + 
+				"			<span class='title'>职业要求：</span><span class='value'>"+tempEquip.getSect()+"</span><br>\r\n" + 
 				"		<hr>\r\n" + 
 				"			<span class='title'>外功攻击：</span><span class='value'>193-453</span><span class='title'>(223-520)</span><br>\r\n" + 
 				"			<span class='title'>内功攻击：</span><span class='value'>212-520</span><span class='title'>(223-520)</span><br>\r\n" + 
@@ -115,7 +119,7 @@ System.out.println();
 				"</html>");
 		//向背包中添加物品
 		BagPanel.addItem();
-		
+
 		
 	}
 }
