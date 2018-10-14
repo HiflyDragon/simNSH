@@ -18,13 +18,13 @@ public class purpleWeapon extends Weapon {
 		setSect(Integer.parseInt(Data.SW60ZW[3]));
 		setPart(Integer.parseInt(Data.SW60ZW[4]));
 		//设定紫色武器的攻的最大值
-		WGGJ[3]=223;WGGJ[4]=520;
-		NGGJ[3]=223;NGGJ[4]=520;
+		WGGJ[2]=223;WGGJ[3]=520;
+		NGGJ[2]=223;NGGJ[3]=520;
 		//设定最小攻最大攻
-		WGGJ[0]=RandomUtil.getRandom(WGGJ[3]-60, WGGJ[3]);
-		WGGJ[1]=RandomUtil.getRandom(WGGJ[4]-60, WGGJ[4]);
-		NGGJ[0]=RandomUtil.getRandom(WGGJ[3]-60, WGGJ[3]);
-		NGGJ[1]=RandomUtil.getRandom(NGGJ[4]-60, NGGJ[4]);
+		WGGJ[0]=RandomUtil.getRandom(WGGJ[2]-60, WGGJ[2]);
+		WGGJ[1]=RandomUtil.getRandom(WGGJ[3]-60, WGGJ[3]);
+		NGGJ[0]=RandomUtil.getRandom(WGGJ[2]-60, WGGJ[2]);
+		NGGJ[1]=RandomUtil.getRandom(NGGJ[3]-60, NGGJ[3]);
 		//basicAttrib.add
 		
 	}
